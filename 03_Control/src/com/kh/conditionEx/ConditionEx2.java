@@ -69,23 +69,126 @@ public class ConditionEx2 {
 		Scanner sc = new Scanner(System.in);
 		
 		int month = sc.nextInt();
-		
-		if(month>=3 && month<=5) {//(month==3 || month==4 || month==5)
+		if(month <= 0) {
+			System.out.println("해당 달은 없습니다.");
+		}else if(month>=3 && month<=5) {//(month==3 || month==4 || month==5)
 			System.out.println("봄");
-		}else if(month >= 6 && month <= 8) {
+		}else if(month == 12 || month == 1 || month == 2){
+			System.out.println("겨울");
+		}else if(month <= 8) {
 			System.out.println("여름");
-		}else if(month >= 9 && month <= 11) {
+		}else if(month <= 11) {
 			System.out.println("가을");
 		}else {
-			System.out.println("겨울");
+			System.out.println("해당 달은 없습니다");
 		}
+	}
+	
+	public static void method4() {
+		//13세 이하 어린이 ,14~18세 청소년, 19세이상 성인
+		
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.print("나이 입력 : ");
+		int age = sc.nextInt();
+		/*
+		if(age <= 13) {
+			System.out.println("어린이");
+		}else if(age <= 18) {
+			System.out.println("청소년");
+		}else {
+			System.out.println("성인");
+		}
+		*/
+		
+		//변수의 기능을 활용해서 마지막에 나이에 따른 표기를 출력
+		String result;
+		if(age <= 13) {
+			result = "어린이";
+		}else if(age <= 18) {
+			result = "청소년";
+		}else {
+			result = "성인";
+		}
+		
+		System.out.println(result + "입니다.");
+		
+	}
+	
+	public static void method1_result() {
+		
+		int money = 1950; // 내가 현재 가지고 있는 돈
+				
+		
+		String result;
+				if(money >= 2000) {
+					result = "택시를 탄다";
+				}else if(money >= 1500 && money <= 1900) {
+					result = "대중교통을 이용한다";
+				}else {
+					result = "걸어간다";
+				}
+				
+				System.out.println(result);
+	
+		
+	}
+	
+	public static void method2_result() {
+		Scanner sc = new Scanner(System.in);
+		System.out.print("안녕하세요. kh티켓나라입니다.");
+		System.out.print("나이를 입력해 주세요 : ");
+		int age = sc.nextInt();
+		
+		String result;
+		if(age <= 13) {
+			result ="어린이";
+		}else if(age <= 18) {
+			result = "청소년";
+		}else {
+			result = "성인";
+		}
+		
+		System.out.println(result);
+		
+	}
+	
+	public static void method3_result() {
+		System.out.print("달을 입력하세요 : ");
+		Scanner sc = new Scanner(System.in);
+		
+		int month = sc.nextInt();
+		
+		String result;
+		
+		if(month <= 0) {
+			result = "해당 달은 없습니다.";
+		}else if(month>=3 && month<=5) {//(month==3 || month==4 || month==5)
+			result ="봄";
+		}else if(month == 12 || month == 1 || month == 2){
+			result = "겨울";
+		}else if(month <= 8) {
+			result = "여름";
+		}else if(month <= 11) {
+			result = "가을";
+		}else {
+			result = "해당 달은 없습니다";
+		}
+		
+		System.out.println(result);
 	}
 
 	public static void main(String[] args) {
 		//method1();
 		//method2();
 		
-		method3();
+		//method3();
+		
+		//method4();
+		
+		//method1_result();
+		//method2_result();
+		method3_result();
 	}
 
 }
