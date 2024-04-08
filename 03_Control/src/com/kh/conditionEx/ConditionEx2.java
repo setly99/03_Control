@@ -177,6 +177,27 @@ public class ConditionEx2 {
 		
 		System.out.println(result);
 	}
+	
+	public static void method100_grade() {
+		System.out.print("학점확인을위해 점수 입력 : ");
+		Scanner sc = new Scanner(System.in);
+		int score = sc.nextInt();
+		
+		char grade;
+		if(score >= 90) {
+			grade = 'A';
+		}else if(score >= 80) {
+			grade = 'B';
+		}else if(score >= 70) {
+			grade = 'C';
+		}else if(score >= 60) {
+			grade = 'D';
+		}else {
+			grade = 'F';
+		}
+		
+		System.out.println("학점 : " + grade);
+	}
 
 	public static void main(String[] args) {
 		//method1();
@@ -188,7 +209,9 @@ public class ConditionEx2 {
 		
 		//method1_result();
 		//method2_result();
-		method3_result();
+		//method3_result();
+		
+		method100_grade();
 	}
 
 }
