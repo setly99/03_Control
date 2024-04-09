@@ -96,6 +96,7 @@ public class ControlSwitchIf {
 		
 	}
 	
+	
 	/*
 	 public static void whatDay()
 	 월 수 금 : 헬스
@@ -106,6 +107,9 @@ public class ControlSwitchIf {
 	 	1.등산 2.독서 3.수영
 	 
 	 */
+	
+		
+	
 	public static void whatDay() {
 		Scanner sc = new Scanner(System.in);
 		System.out.print("요일을 입력하세요:");
@@ -113,7 +117,7 @@ public class ControlSwitchIf {
 		
 		String activity; // String activity = ""; //이렇게 처리해놓으면 밑에 activity없는 부분으로 인한 오류안생김.
 		switch(day) {
-			case "월": case "수": case "금":{
+			case "월": case "수": case "금":{ //문자열?은 쉼표로 단체처리안되는듯.
 				activity = "헬스";
 				break;
 			}
@@ -132,11 +136,11 @@ public class ControlSwitchIf {
 					case "아니오":{//밑에 너무 길어져서 괄호침.
 						System.out.println("어떤 활동을 할 예정인지 선택해주세요:");
 						System.out.println("1.등산 2.독서 3.수영");
-						int choiceWeekend = sc.nextInt();
+						int actNum = sc.nextInt();
 						
 						//String choiceResult;//switch아래에 넣으면오류나는듯.
 		
-						switch(choiceWeekend) {//3중첩 스위치
+						switch(actNum) {//3중첩 스위치
 							case 1:{
 								activity = "등산";
 								break;
@@ -150,6 +154,7 @@ public class ControlSwitchIf {
 								break;
 							}
 							default :
+								//return;
 								//System.out.println("잘못된 주말활동 선택입니다. 123만 입력하세요.");//에러1밑에따로처리
 								activity = "error123";
 						}
@@ -157,26 +162,23 @@ public class ControlSwitchIf {
 						break;//아니오case break
 					}
 				
-					default:{//예 아니오 이외
-						//System.out.println("예 아니오만 입력하세요.");//에러2밑에따로처리
-						
-						//return;아예나가버려서 사용하지말자.
-						
+					default://예 아니오 이외
+						//System.out.println("예 아니오만 입력하세요.");//에러2밑에따로처리 //return;쓰려면 위에activity="";기본설정.
 						activity = "errorYesNo";
-					}
+	
 				}//2중첩스위치종료
 				
-			break;	
-			}//토,일case종료
+			break;//토,일case break
+			}
 			
 			default:
+				//return;
 				//System.out.println("잘못된 요일 입력입니다.");//에러3밑에따로처리
 				activity ="errorDay";
 				
-		
 		}//요일 스위치 종료
 			
-		//요일에 따른 최종 활동출력
+		//최종 활동출력
 		switch(activity) {
 		case "error123":
 			System.out.println("잘못된 주말활동 선택입니다. 123만입력하세요.");
@@ -194,6 +196,8 @@ public class ControlSwitchIf {
 		
 		
 	}//메서드종료
+	
+	//whatDay 복잡한 switch중첩문.
 		
 	
 	public static void main(String[] args) {
