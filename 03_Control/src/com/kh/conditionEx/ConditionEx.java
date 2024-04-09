@@ -20,10 +20,13 @@ public class ConditionEx {
 		System.out.print("나이 입력 : ");
 		int age = sc.nextInt();
 		
+		String str;
 		if(age >= 19)
-			System.out.println("19세 이상은 성인입니다.");
+			str="19세 이상은 성인입니다.";
 		else
-			System.out.println("성인이 아닙니다.");
+			str="성인이 아닙니다.";
+		
+		System.out.println(str);
 		
 		
 	}
@@ -33,10 +36,13 @@ public class ConditionEx {
 		
 		// 만약에 num이 짝수일 경우 짝수입니다. 출력하기
 		//num이 홀수일 경우 홀수입니다. 출력하기
+		String str;
 		if(num % 2 == 0) // c에서 if(!(num%2)) -> 짝수라면 if(!0) -> if(1)처리
-			System.out.println("짝수입니다.");
+			str="짝수입니다.";
 		else
-			System.out.println("홀수입니다.");
+			str="홀수입니다.";
+		
+		System.out.println(str);
 			
 	}
 	
@@ -45,10 +51,14 @@ public class ConditionEx {
 		int age = 14;
 		//1. 범위 0보다 커야함,14보다 작아야함
 		//14부터는 어린이가 아닙니다.
+		
+		String str;
 		if(age > 0 && age < 14)
-			System.out.println("어린이입니다.");
+			str = "어린이입니다.";
 		else
-			System.out.println("어린이가 아닙니다.");
+			str = "어린이가 아닙니다.";
+		
+		System.out.println(str);
 	}
 	
 	//실습 : Scanner 활용해서 진행하기
@@ -60,10 +70,13 @@ public class ConditionEx {
 		
 		int age = sc.nextInt();
 		
+		String str;
+		
 		if(age >= 10 && age < 20)
-			System.out.println("10대 입니다.");
+			str = "10대 입니다.";
 		else
-			System.out.println("10대가 아님.");
+			str = "10대가 아님.";
+		System.out.println(str);
 		
 	}
 
@@ -74,10 +87,13 @@ public class ConditionEx {
 		
 		int age = sc.nextInt();
 		
+		String str;
 		if(age >= 80)
-			System.out.println("80세 이상입니다.");
+			str = "80세 이상입니다.";
 		else
-			System.out.println("80세 이상이 아닙니다.");
+			str ="80세 이상이 아닙니다.";
+		
+		System.out.println(str);
 	}
 	
 	/*
@@ -106,12 +122,16 @@ public class ConditionEx {
 		
 		int num = sc.nextInt();
 		
+		String str;
+		
 		if(num <= 0)
-			System.out.println("양수만 입력해주세요.");
+			str = "양수만 입력해주세요.";
 		else if(num % 2 == 0)
-			System.out.println("짝수입니다.");
+			str = "짝수입니다.";
 		else
-			System.out.println("홀수입니다.");
+			str = "홀수입니다.";
+		
+		System.out.println(str);
 	}
 	/*
 메소드 명 : public void practice2(){}
@@ -146,20 +166,23 @@ public class ConditionEx {
 		int english = sc.nextInt();
 		
 		int total = korean + math + english;
-		double everage = total / 3.0;
+		double average = total / 3.0;
 		
-		if(korean >= 40 && math >= 40 && english >= 40 && everage >= 60) {
+		String result;
+		if(korean >= 40 && math >= 40 && english >= 40 && average >= 60) {
 			System.out.println("국어 : " + korean);
 			System.out.println("수학 : " + math);
 			System.out.println("영어 : " + english);
 			System.out.println("합계 : " + total);
-			System.out.println("평균 : " + everage);
+			System.out.println("평균 : " + average);
 			
-			System.out.println("축하합니다, 합격입니다!");
+			result = "축하합니다, 합격입니다!";
 		}
 		else
-			System.out.println("불합격입니다.");
+			result = "불합격입니다.";
+		System.out.println(result);
 	}
+	
 	
 	/*
 	 메소드 명 : public void practice3(){}
@@ -204,16 +227,20 @@ BMI 지수 : 21.45087235996327
 		
 		System.out.println("BMI 지수 : " + bmi);
 		
+		String result;
+		
 		if(bmi < 18.5) 
-			System.out.println("저체중");
+			result = "저체중";
 		else if(bmi < 23)
-			System.out.println("정상체중");
+			result = "정상체중";
 		else if(bmi < 25)
-			System.out.println("과체중");
+			result = "과체중";
 		else if(bmi < 30)
-			System.out.println("비만");
+			result = "비만";
 		else
-			System.out.println("고도비만");
+			result = "고도비만";
+		
+		System.out.println(result);
 		
 	}
 	
@@ -279,9 +306,9 @@ Fail [출석 횟수 부족 (10/20)]
 		System.out.println("================= 결과 =================");
 
 		
-		final int attFull = 20; 
+		final int attFull = 20;	//전체수업일수
 		
-		int attMin = attFull - attFull * 3 / 10;
+		final int attMin = attFull - attFull * 3 / 10;	//초과해야되는 최소출석일
 		
 		//출석횟수 부족하면 점수출력 필요없이 바로 fail
 		if(attendance <= attMin) {
